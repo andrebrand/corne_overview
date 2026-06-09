@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Corne Keymap</title>
+
+    <style>
+        body {font-family: Arial;}
+        
+        /* Style the tab */
+        .tab {
+          overflow: hidden;
+          border: 1px solid #ccc;
+          background-color: #f1f1f1;
+        }
+        
+        /* Style the buttons inside the tab */
+        .tab button {
+          background-color: inherit;
+          float: left;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding: 14px 16px;
+          transition: 0.3s;
+          font-size: 17px;
+        }
+        
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+          background-color: #ddd;
+        }
+        
+        /* Create an active/current tablink class */
+        .tab button.active {
+          background-color: #ccc;
+        }
+        
+        /* Style the tab content */
+        .tabcontent {
+          display: none;
+          padding: 6px 12px;
+          border: 1px solid #ccc;
+          border-top: none;
+        }
+    </style>
+
+    <style>
+        :root {
+            --background: #ccc;
+        }
+        
+        .key, .key-big {
+            padding: 5px;
+            margin: 5px;
+            background-color: var(--background);
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            font-size: 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .key.mid {
+            font-size: 25px;
+        } 
+
+        .key.long {
+            font-size: 15px;
+        }
+
+        .key-big {
+            height: 75px;
+        } 
+
+        .right {
+            display: flex;
+        }
+
+        .left {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+        }
+
+        .left .column:nth-child(1), .left .column:nth-child(2), .right .column:nth-child(6), .right .column:nth-child(5) {
+            margin-top: 20px;
+        }
+
+        .left .column:nth-child(3), .left .column:nth-child(5), .right .column:nth-child(4), .right .column:nth-child(2) {
+            margin-top: 10px;
+        }
+
+        .left .column:nth-child(6), .right .column:nth-child(1) {
+            margin-top: 15px;
+        }
+
+        .thumb {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .keyboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            padding: 5px;
+            max-width: 1200px;
+        }
+
+        .cursor {
+            cursor: pointer;
+        }
+
+        .hrm{
+            font-size: 11px;
+        }
+        .key span{
+            font-size: 34px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="tab">
+        <button id="Layer0_button" class="tablinks" onclick="openTab(event, 'Layer0')">Layer 0</button>
+        <button id="Layer1_button" class="tablinks" onclick="openTab(event, 'Layer1')">Layer 1</button>
+        <button id="Layer2_button" class="tablinks active" onclick="openTab(event, 'Layer2')">Layer 2</button>
+        <button id="Layer3_button" class="tablinks" onclick="openTab(event, 'Layer3')">Layer 3</button>
+        <button id="Layer4_button" class="tablinks" onclick="openTab(event, 'Layer4')">Layer 4</button>
+        <button id="Layer5_button" class="tablinks" onclick="openTab(event, 'Layer5')">Layer 5</button>
+        <button id="Layer6_button" class="tablinks" onclick="openTab(event, 'Layer6')">Layer 6</button>
+        <button id="Layer7_button" class="tablinks" onclick="openTab(event, 'Layer7')">Layer 7</button>
+    </div>
+    <div id="Layer0" class="tabcontent">
+        <h3>Layer 0 - Baselayer</h3>
+        <div class="keyboard">
+            <div class="left">
+                <div class="column">
+                    <div class="key mid">
+                        ESC
+                    </div>
+                    <div class="key mid">
+                        TAB
+                    </div>
+                    <div class="key">
+                        ß
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        Q
+                    </div>
+                    <div class="key">
+                        <span>
+                        A
+                        </span>
+                        <div class="hrm">Shift</div>
+                    </div>
+                    <div class="key">
+                        <span>Z</span>
+                        <div class="hrm">Ctrl</div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        W
+                    </div>
+                    <div class="key">
+                        <span>S</span>
+                        <div class="hrm">Win</div>
+                    </div>
+                    <div class="key">
+                        X
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        E
+                    </div>
+                    <div class="key">
+                        <span>D</span>
+                        <div class="hrm">Alt</div>
+                    </div>
+                    <div class="key">
+                        C
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        R
+                    </div>
+                    <div class="key">
+                        <span>F</span>
+                        <div class="hrm">Ctrl</div>
+                    </div>
+                    <div class="key">
+                        V
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        T
+                    </div>
+                    <div class="key">
+                        G
+                    </div>
+                    <div class="key">
+                        B
+                    </div>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="column">
+                    <div class="key">
+                        Y
+                    </div>
+                    <div class="key">
+                        <span>H</span>
+                        <div class="hrm">Ctrl</div>
+                    </div>
+                    <div class="key">
+                        N
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        U
+                    </div>
+                    <div class="key">
+                        J
+                    </div>
+                    <div class="key">
+                        M
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        I
+                    </div>
+                    <div class="key">
+                        K
+                    </div>
+                    <div class="key">
+                        ; .
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        O
+                    </div>
+                    <div class="key">
+                        L
+                    </div>
+                    <div class="key">
+                        . :
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        P
+                    </div>
+                    <div class="key">
+                        Ö
+                    </div>
+                    <div class="key">
+                        <span>- _</span>
+                        <div class="hrm">Ctrl</div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key long">
+                        Back- space
+                    </div>
+                    <div class="key">
+                        Ä
+                    </div>
+                    <div class="key">
+                        Ü
+                    </div>
+                </div>
+            </div>
+            <div class="left">
+                <div class="thumb">
+                    <div class="key cursor" onclick="openTab(event, 'Layer1')">
+                        L1
+                    </div>
+                    <div class="key long">
+                        SPACE
+                    </div>
+                    <div class="key-big" onclick="openTab(event, 'Layer2')">
+                        L2
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="thumb">
+                    <div class="key-big" onclick="openTab(event, 'Layer3')">
+                        L3
+                    </div>
+                    <div class="key long">
+                        ENTER
+                    </div>
+                    <div class="key" onclick="openTab(event, 'Layer1')">
+                        L1
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>
+
+    <div id="Layer1" class="tabcontent" >
+        <h3>Layer 1 - Navigationlayer</h3>
+        <div class="keyboard">
+            <div class="left">
+                <div class="column">
+                    <div class="key mid">
+                        ESC
+                    </div>
+                    <div class="key mid">
+                        TAB
+                    </div>
+                    <div class="key">
+                        ,
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        *
+                    </div>
+                    <div class="key">
+                        /
+                    </div>
+                    <div class="key">
+                        .
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        7
+                    </div>
+                    <div class="key">
+                        4
+                    </div>
+                    <div class="key">
+                        1
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        8
+                    </div>
+                    <div class="key">
+                        5
+                    </div>
+                    <div class="key">
+                        2
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        9
+                    </div>
+                    <div class="key">
+                        6
+                    </div>
+                    <div class="key">
+                        3
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        +
+                    </div>
+                    <div class="key">
+                        -
+                    </div>
+                    <div class="key">
+                        0
+                    </div>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="column">
+                    <div class="key long">
+                        Page Up
+                    </div>
+                    <div class="key long">
+                        Page Down
+                    </div>
+                    <div class="key long">
+                        Menu
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key long">
+                        Pos 1                        
+                    </div>
+                    <div class="key">
+                        &larr;
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        &uarr;
+                    </div>
+                    <div class="key">
+                        &darr;
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key long">
+                        Ende
+                    </div>
+                    <div class="key">
+                        &rarr;
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key long">
+                        Back- space
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                    <div class="key long">
+                        Entf
+                    </div>
+                </div>
+            </div>
+            <div class="left">
+                <div class="thumb">
+                    <div class="key" onclick="openTab(event, 'Layer0')">
+                        L1
+                    </div>
+                    <div class="key long">
+                        SPACE
+                    </div>
+                    <div class="key-big" onclick="openTab(event, 'Layer2')">
+                        L2
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="thumb">
+                    <div class="key-big" onclick="openTab(event, 'Layer3')">
+                        L3
+                    </div>
+                    <div class="key long">
+                        ENTER
+                    </div>
+                    <div class="key" onclick="openTab(event, 'Layer0')">
+                        L1
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>
+
+    
+    <div id="Layer2" class="tabcontent" style="display: block;">
+        <h3>Layer 2 - Sonderzeichen</h3>
+        <div class="keyboard">
+            <div class="left">
+                <div class="column">
+                    <div class="key mid">
+                        ESC
+                    </div>
+                    <div class="key mid">
+                        TAB
+                    </div>
+                    <div class="key long">
+                        Shift
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key mid">
+                        ^ °
+                    </div>
+                    <div class="key">
+                        !
+                    </div>
+                    <div class="key">
+                        ?
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        /
+                    </div>
+                    <div class="key">
+                        &
+                    </div>
+                    <div class="key">
+                        $
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        |
+                    </div>
+                    <div class="key">
+                        #
+                    </div>
+                    <div class="key">
+                        *
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        \
+                    </div>
+                    <div class="key">
+                        @
+                    </div>
+                    <div class="key">
+                        %
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        +
+                    </div>
+                    <div class="key">
+                        -
+                    </div>
+                    <div class="key">
+                        €
+                    </div>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="column">
+                    <div class="key">
+                        "
+                    </div>
+                    <div class="key">
+                        '
+                    </div>
+                    <div class="key">
+                        ñ
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        &lpar;
+                    </div>
+                    <div class="key">
+                        &lcub;
+                    </div>
+                    <div class="key">
+                        [
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        &rpar;
+                    </div>
+                    <div class="key">
+                        &rcub;
+                    </div>
+                    <div class="key">
+                        &rsqb;
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        ´ `
+                    </div>
+                    <div class="key">
+                        &lt;
+                    </div>
+                    <div class="key">
+                        ;
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                         
+                    </div>
+                    <div class="key">
+                        &gt;
+                    </div>
+                    <div class="key">
+                        :
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key long">
+                        Back- space
+                    </div>
+                    <div class="key">
+                        ~
+                    </div>
+                    <div class="key long">
+                        Entf
+                    </div>
+                </div>
+            </div>
+            <div class="left">
+                <div class="thumb">
+                    <div class="key" onclick="openTab(event, 'Layer1')">
+                        L1
+                    </div>
+                    <div class="key long">
+                        SPACE
+                    </div>
+                    <div class="key-big" onclick="openTab(event, 'Layer0')">
+                        L2
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="thumb">
+                    <div class="key-big" onclick="openTab(event, 'Layer3')">
+                        L3
+                    </div>
+                    <div class="key long">
+                        ENTER
+                    </div>
+                    <div class="key" onclick="openTab(event, 'Layer1')">
+                        L1
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>
+
+    <div id="Layer3" class="tabcontent">
+        <h3>Layer 3 - Extralayer</h3>
+        <div class="keyboard">
+            <div class="left">
+                <div class="column">
+                    <div class="key">
+                        F1
+                    </div>
+                    <div class="key long">
+                        Default Layer 4
+                    </div>
+                    <div class="key long">
+                        Activate Layer 4
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        F2
+                    </div>
+                    <div class="key long">
+                        Default Layer 0
+                    </div>
+                    <div class="key long">
+                        Activate Layer 0
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        F3
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        F4
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        F5
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        F6
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="column">
+                    <div class="key">
+                        F7
+                    </div>
+                    <div class="key long">
+                        Next RGB Mode
+                    </div>
+                    <div class="key long">
+                        Prev RGB Mode
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        F7
+                    </div>
+                    <div class="key long">
+                        In&shy;crease Hue
+                    </div>
+                    <div class="key long">
+                        De&shy;crease Hue
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        F8
+                    </div>
+                    <div class="key long">
+                        In&shy;crease Bright
+                    </div>
+                    <div class="key long">
+                        De&shy;crease Bright
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        F9
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                    <div class="key">
+                    
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key mid">
+                         F10
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                    <div class="key">
+
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key mid">
+                        F11
+                    </div>
+                    <div class="key">
+
+                    </div>
+                    <div class="key long">
+
+                    </div>
+                </div>
+            </div>
+            <div class="left">
+                <div class="thumb">
+                    <div class="key" onclick="openTab(event, 'Layer1')">
+                        L1
+                    </div>
+                    <div class="key long">
+                        SPACE
+                    </div>
+                    <div class="key-big" onclick="openTab(event, 'Layer2')">
+                        L2
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="thumb">
+                    <div class="key-big" onclick="openTab(event, 'Layer0')">
+                        L3
+                    </div>
+                    <div class="key long">
+                        ENTER
+                    </div>
+                    <div class="key" onclick="openTab(event, 'Layer1')">
+                        L1
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>
+
+    
+    <div id="Layer4" class="tabcontent">
+        <h3>Layer 4 - Mac Baselayer</h3>
+        <div class="keyboard">
+            <div class="left">
+                <div class="column">
+                    <div class="key mid">
+                        ESC
+                    </div>
+                    <div class="key mid">
+                        TAB
+                    </div>
+                    <div class="key">
+                        ß
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        Q
+                    </div>
+                    <div class="key">
+                        A
+                    </div>
+                    <div class="key">
+                        Z
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        W
+                    </div>
+                    <div class="key">
+                        S
+                    </div>
+                    <div class="key">
+                        X
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        E
+                    </div>
+                    <div class="key">
+                        D
+                    </div>
+                    <div class="key">
+                        C
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        R
+                    </div>
+                    <div class="key">
+                        F
+                    </div>
+                    <div class="key">
+                        V
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        T
+                    </div>
+                    <div class="key">
+                        G
+                    </div>
+                    <div class="key">
+                        B
+                    </div>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="column">
+                    <div class="key">
+                        Y
+                    </div>
+                    <div class="key">
+                        H
+                    </div>
+                    <div class="key">
+                        N
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        U
+                    </div>
+                    <div class="key">
+                        J
+                    </div>
+                    <div class="key">
+                        M
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        I
+                    </div>
+                    <div class="key">
+                        K
+                    </div>
+                    <div class="key">
+                        ; .
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        O
+                    </div>
+                    <div class="key">
+                        L
+                    </div>
+                    <div class="key">
+                        . :
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        P
+                    </div>
+                    <div class="key">
+                        Ö
+                    </div>
+                    <div class="key">
+                        - _
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key long">
+                        Back- space
+                    </div>
+                    <div class="key">
+                        Ä
+                    </div>
+                    <div class="key">
+                        Ü
+                    </div>
+                </div>
+            </div>
+            <div class="left">
+                <div class="thumb">
+                    <div class="key cursor" onclick="openTab(event, 'Layer5')">
+                        L5
+                    </div>
+                    <div class="key long">
+                        SPACE
+                    </div>
+                    <div class="key-big" onclick="openTab(event, 'Layer6')">
+                        L6
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="thumb">
+                    <div class="key-big" onclick="openTab(event, 'Layer7')">
+                        L7
+                    </div>
+                    <div class="key long">
+                        ENTER
+                    </div>
+                    <div class="key" onclick="openTab(event, 'Layer5')">
+                        L5
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>
+
+    
+    <div id="Layer5" class="tabcontent" >
+        <h3>Layer 5 - Mac Navigationlayer</h3>
+        <div class="keyboard">
+            <div class="left">
+                <div class="column">
+                    <div class="key mid">
+                        ESC
+                    </div>
+                    <div class="key mid">
+                        TAB
+                    </div>
+                    <div class="key">
+                        ,
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        *
+                    </div>
+                    <div class="key">
+                        /
+                    </div>
+                    <div class="key">
+                        .
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        7
+                    </div>
+                    <div class="key">
+                        4
+                    </div>
+                    <div class="key">
+                        1
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        8
+                    </div>
+                    <div class="key">
+                        5
+                    </div>
+                    <div class="key">
+                        2
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        9
+                    </div>
+                    <div class="key">
+                        6
+                    </div>
+                    <div class="key">
+                        3
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        +
+                    </div>
+                    <div class="key">
+                        -
+                    </div>
+                    <div class="key">
+                        0
+                    </div>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="column">
+                    <div class="key long">
+                        Page Up
+                    </div>
+                    <div class="key long">
+                        Page Down
+                    </div>
+                    <div class="key long">
+                        Menu
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key long">
+                        Pos 1                        
+                    </div>
+                    <div class="key">
+                        &larr;
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        &uarr;
+                    </div>
+                    <div class="key">
+                        &darr;
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key long">
+                        Ende
+                    </div>
+                    <div class="key">
+                        &rarr;
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key long">
+                        Back- space
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                    <div class="key long">
+                        Entf
+                    </div>
+                </div>
+            </div>
+            <div class="left">
+                <div class="thumb">
+                    <div class="key" onclick="openTab(event, 'Layer4')">
+                        L5
+                    </div>
+                    <div class="key long">
+                        SPACE
+                    </div>
+                    <div class="key-big" onclick="openTab(event, 'Layer6')">
+                        L6
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="thumb">
+                    <div class="key-big" onclick="openTab(event, 'Layer7')">
+                        L7
+                    </div>
+                    <div class="key long">
+                        ENTER
+                    </div>
+                    <div class="key" onclick="openTab(event, 'Layer4')">
+                        L5
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>
+
+    <div id="Layer6" class="tabcontent">
+        <h3>Layer 6 - Mac Sonderzeichen</h3>
+        <div class="keyboard">
+            <div class="left">
+                <div class="column">
+                    <div class="key mid">
+                        ESC
+                    </div>
+                    <div class="key mid">
+                        TAB
+                    </div>
+                    <div class="key long">
+                        Shift
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key mid">
+                        ^ °
+                    </div>
+                    <div class="key">
+                        !
+                    </div>
+                    <div class="key">
+                        ?
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        /
+                    </div>
+                    <div class="key">
+                        &
+                    </div>
+                    <div class="key">
+                        $
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        |
+                    </div>
+                    <div class="key">
+                        #
+                    </div>
+                    <div class="key">
+                        *
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        \
+                    </div>
+                    <div class="key">
+                        @
+                    </div>
+                    <div class="key">
+                        %
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        +
+                    </div>
+                    <div class="key">
+                        -
+                    </div>
+                    <div class="key">
+                        €
+                    </div>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="column">
+                    <div class="key">
+                        "
+                    </div>
+                    <div class="key">
+                        '
+                    </div>
+                    <div class="key">
+                        ñ
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        &lpar;
+                    </div>
+                    <div class="key">
+                        &lcub;
+                    </div>
+                    <div class="key">
+                        [
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        &rpar;
+                    </div>
+                    <div class="key">
+                        &rcub;
+                    </div>
+                    <div class="key">
+                        &rsqb;
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        ´ `
+                    </div>
+                    <div class="key">
+                        &lt;
+                    </div>
+                    <div class="key">
+                        ;
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                         
+                    </div>
+                    <div class="key">
+                        &gt;
+                    </div>
+                    <div class="key">
+                        :
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key long">
+                        Back- space
+                    </div>
+                    <div class="key">
+                        ~
+                    </div>
+                    <div class="key long">
+                        Entf
+                    </div>
+                </div>
+            </div>
+            <div class="left">
+                <div class="thumb">
+                    <div class="key" onclick="openTab(event, 'Layer5')">
+                        L5
+                    </div>
+                    <div class="key long">
+                        SPACE
+                    </div>
+                    <div class="key-big" onclick="openTab(event, 'Layer4')">
+                        L6
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="thumb">
+                    <div class="key-big" onclick="openTab(event, 'Layer7')">
+                        L7
+                    </div>
+                    <div class="key long">
+                        ENTER
+                    </div>
+                    <div class="key" onclick="openTab(event, 'Layer5')">
+                        L5
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>
+
+    <div id="Layer7" class="tabcontent">
+        <h3>Layer 7 - Mac Extralayer</h3>
+        <div class="keyboard">
+            <div class="left">
+                <div class="column">
+                    <div class="key">
+                        F1
+                    </div>
+                    <div class="key long">
+                        Default Layer 4
+                    </div>
+                    <div class="key long">
+                        Activate Layer 4
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        F2
+                    </div>
+                    <div class="key long">
+                        Default Layer 0
+                    </div>
+                    <div class="key long">
+                        Activate Layer 0
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        F3
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        F4
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        F5
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        F6
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="column">
+                    <div class="key">
+                        F7
+                    </div>
+                    <div class="key long">
+                        Next RGB Mode
+                    </div>
+                    <div class="key long">
+                        Prev RGB Mode
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        F7
+                    </div>
+                    <div class="key long">
+                        In&shy;crease Hue
+                    </div>
+                    <div class="key long">
+                        De&shy;crease Hue
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        F8
+                    </div>
+                    <div class="key long">
+                        In&shy;crease Bright
+                    </div>
+                    <div class="key long">
+                        De&shy;crease Bright
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key">
+                        F9
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                    <div class="key">
+                    
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key mid">
+                         F10
+                    </div>
+                    <div class="key">
+                        
+                    </div>
+                    <div class="key">
+
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="key mid">
+                        F11
+                    </div>
+                    <div class="key">
+
+                    </div>
+                    <div class="key long">
+
+                    </div>
+                </div>
+            </div>
+            <div class="left">
+                <div class="thumb">
+                    <div class="key" onclick="openTab(event, 'Layer5')">
+                        L5
+                    </div>
+                    <div class="key long">
+                        SPACE
+                    </div>
+                    <div class="key-big" onclick="openTab(event, 'Layer6')">
+                        L6
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="thumb">
+                    <div class="key-big" onclick="openTab(event, 'Layer4')">
+                        L7
+                    </div>
+                    <div class="key long">
+                        ENTER
+                    </div>
+                    <div class="key" onclick="openTab(event, 'Layer5')">
+                        L5
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>
+
+
+    <script>
+        function openTab(evt, name) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(name).style.display = "block";
+          console.log(name + "_button")
+          document.getElementById(name + "_button").className += " active";
+        }
+    </script>
+</body>
+</html>
